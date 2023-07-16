@@ -4,45 +4,6 @@
   justify-content: space-between;
 }
 
-.logo-container {
-  display: flex;
-}
-
-.logo-image {
-  margin-right: 16px;
-  margin-top: 10px;
-  width: 26px;
-}
-
-.logo-description h1 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.logo-container .input-group {
-  width: 350px;
-  margin-left: 60px;
-}
-
-.search-icon {
-  border: var(--bs-border-width) solid var(--bs-border-color);
-  height: 100%;
-  border-right: none;
-  border-radius: 6px;
-  padding-left: 18px;
-  width: 37px;
-}
-.search-input {
-  border-left: none;
-}
-.search-input:focus {
-  outline: none;
-  box-shadow: none;
-  border: var(--bs-border-width) solid var(--bs-border-color);
-  border-left: none;
-}
-
 .new-photo {
   height: 40px;
   font-size: 13px;
