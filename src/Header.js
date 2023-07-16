@@ -5,7 +5,7 @@ export default function Header() {
         <img src="./camera-retro-solid.svg" className="App-logo" alt="logo" />
       </div>
       <div className="logo-description">
-        <h1>Hashtag Photos</h1>
+        <h1>#Photos</h1>
         <p>devchallenges.io</p>
       </div>
       <div className="input-group mb-3">
