@@ -1,4 +1,11 @@
-export default function Header() {
+import { useState } from "react";
+
+export default function Header({ setSearchTerm }) {
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <div className="logo-container">
       <div className="logo-image">
@@ -20,6 +27,7 @@ export default function Header() {
           placeholder="Search by name"
           aria-label="Example text with button addon"
           aria-describedby="button-addon1"
+          onChange={handleSearch}
         />
       </div>
     </div>
