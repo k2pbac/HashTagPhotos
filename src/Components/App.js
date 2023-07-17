@@ -59,6 +59,12 @@ function App() {
         handleClose={handleCloseNew}
         show={showNew}
       />
+      <footer className="footer">
+        <p>
+          Created by <strong className="username">Kris Bachan</strong> -
+          devChallenges.io{" "}
+        </p>
+      </footer>
     </div>
   );
 }
