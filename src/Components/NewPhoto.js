@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 function NewPhoto({ handleClose, show }) {
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal className="new-photo-modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add a new photo</Modal.Title>
         </Modal.Header>
@@ -27,7 +27,7 @@ function NewPhoto({ handleClose, show }) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button className="cancel" variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
           <Button variant="success" onClick={handleClose}>

@@ -1,0 +1,34 @@
+.new-photo-modal input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.new-photo-modal input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.new-photo-modal input {
+  font-size: 12px;
+}
+
+.new-photo-modal .modal-title {
+  font-size: 22px;
+  font-weight: 800;
+}
+.new-photo-modal .form-label {
+  font-size: 16px;
+}
+
+.new-photo-modal button {
+  font-size: 14px;
+}
+
+.new-photo-modal .cancel {
+  border: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.new-photo-modal .cancel:active {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.4);
+}

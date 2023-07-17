@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Index.css";
+import "../Index.css";
 import Header from "./Header";
 import ImageList from "./ImageList";
 import NewPhoto from "./NewPhoto";
