@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-function NewPhoto({ handleClose, show }) {
+function NewPhoto({ handleClose, show, handleAddPhoto }) {
+  const [label, setLabel] = useState("");
+  const [url, setUrl] = useState("");
+
   return (
     <>
       <Modal className="new-photo-modal" show={show} onHide={handleClose}>
@@ -15,6 +19,7 @@ function NewPhoto({ handleClose, show }) {
               <Form.Control
                 type="text"
                 placeholder="maiores repudiandae dolor"
+                onChange={(e) => setLabel(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -22,6 +27,7 @@ function NewPhoto({ handleClose, show }) {
               <Form.Control
                 type="text"
                 placeholder="https://unsplash.com/photos/HYtBA9xDyfg"
+                onChange={(e) => setUrl(e.target.value)}
               />
             </Form.Group>
           </Form>
@@ -30,7 +36,7 @@ function NewPhoto({ handleClose, show }) {
           <Button className="cancel" variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="success" onClick={handleClose}>
+          <Button variant="success" onClick={() => handleAddPhoto(label, url)}>
             Submit
           </Button>
         </Modal.Footer>

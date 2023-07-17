@@ -3,11 +3,18 @@ import "../Index.css";
 import Header from "./Header";
 import ImageList from "./ImageList";
 import NewPhoto from "./NewPhoto";
+import list from "../data.js";
+
 function App() {
   const [show, setShow] = useState(false);
-
+  const [data, setData] = useState(list);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleAddPhoto = (label, url) => {
+    setData([{ hashtag: label, url: url, alt: label }, ...data]);
+    handleClose();
+  };
 
   return (
     <div className="App">
@@ -20,8 +27,13 @@ function App() {
           Add a photo
         </button>
       </header>
-      <ImageList />
-      <NewPhoto handleClose={handleClose} handleShow={handleShow} show={show} />
+      <ImageList list={data} />
+      <NewPhoto
+        handleAddPhoto={handleAddPhoto}
+        handleClose={handleClose}
+        handleShow={handleShow}
+        show={show}
+      />
     </div>
   );
 }
