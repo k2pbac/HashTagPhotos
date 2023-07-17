@@ -1,6 +1,6 @@
 import "./Index.css";
 import Header from "./Header";
-import Masonry from "react-masonry-css";
+import ImageList from "./ImageList";
 
 function App() {
   return (
@@ -11,39 +11,7 @@ function App() {
           Add a photo
         </button>
       </header>
-      <Masonry
-        breakpointCols={4}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
-        <div>
-          <img src="./image1.jpg" alt="image1" />
-        </div>
-        <div>
-          <img src="./image2.jpg" alt="image2" />
-        </div>
-        <div>
-          <img src="./image3.jpg" alt="image3" />
-        </div>
-        <div>
-          <img src="./image1.jpg" alt="image1" />
-        </div>
-        <div>
-          <img src="./image2.jpg" alt="image2" />
-        </div>
-        <div>
-          <img src="./image3.jpg" alt="image3" />
-        </div>
-        <div>
-          <img src="./image1.jpg" alt="image1" />
-        </div>
-        <div>
-          <img src="./image2.jpg" alt="image2" />
-        </div>
-        <div>
-          <img src="./image3.jpg" alt="image3" />
-        </div>
-      </Masonry>
+      <ImageList />
     </div>
   );
 }
