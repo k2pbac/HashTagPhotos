@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
+import DeletePhoto from "./DeletePhoto";
 import Masonry from "react-masonry-css";
-export default function ImageList({ list, searchTerm, handleDelete }) {
+export default function ImageList({
+  list,
+  searchTerm,
+  handleShowDelete,
+  handleDeletePhoto,
+  handleCloseDelete,
+  showDelete,
+}) {
   const [hovered, setHovered] = useState(null);
   const [filteredList, setFilteredList] = useState([]);
   const handleHover = (index) => {
@@ -33,7 +41,7 @@ export default function ImageList({ list, searchTerm, handleDelete }) {
           alt={item.alt}
         />
         <button
-          onClick={() => handleDelete(index)}
+          onClick={() => handleShowDelete(index)}
           className={`btn delete ${hovered === index ? "show" : "hide"}`}
         >
           delete
@@ -41,6 +49,12 @@ export default function ImageList({ list, searchTerm, handleDelete }) {
         <p className={`hashtag ${hovered === index ? "show" : "hide"}`}>
           {item.hashtag}
         </p>
+        <DeletePhoto
+          index={index}
+          handleDelete={handleDeletePhoto}
+          handleClose={handleCloseDelete}
+          show={showDelete === index}
+        />
       </div>
     );
   });

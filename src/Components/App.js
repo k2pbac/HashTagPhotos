@@ -6,21 +6,32 @@ import NewPhoto from "./NewPhoto";
 import list from "../data.js";
 
 function App() {
-  const [show, setShow] = useState(false);
+  const [showNew, setShowNew] = useState(false);
+  const [showDelete, setShowDelete] = useState(null);
   const [data, setData] = useState(list);
   const [searchTerm, setSearchTerm] = useState("");
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const handleCloseNew = () => setShowNew(false);
+  const handleShowNew = () => setShowNew(true);
+  const handleCloseDelete = () => setShowDelete(null);
+  const handleShowDelete = (index) => setShowDelete(index);
+  const myPassword = "123456";
   const handleAddPhoto = (label, url) => {
     setData([{ hashtag: label, url: url, alt: label }, ...data]);
-    handleClose();
+    handleCloseNew();
   };
 
-  const handleDeletePhoto = (index) => {
+  const handleDeletePhoto = (index, password) => {
+    if (password !== myPassword) {
+      alert("Wrong password!");
+      return;
+    }
+    console.log(data);
     const newData = data.filter((item, i) => {
+      console.log(i, index);
       return i !== index;
     });
+    handleCloseDelete(index);
+    console.log(newData);
     setData(newData);
   };
 
@@ -29,7 +40,7 @@ function App() {
       <header className="app-header">
         <Header setSearchTerm={setSearchTerm} />
         <button
-          onClick={handleShow}
+          onClick={handleShowNew}
           className="btn btn-success btn-sm new-photo"
         >
           Add a photo
@@ -38,13 +49,15 @@ function App() {
       <ImageList
         list={data}
         searchTerm={searchTerm}
-        handleDelete={handleDeletePhoto}
+        handleShowDelete={handleShowDelete}
+        handleDeletePhoto={handleDeletePhoto}
+        handleCloseDelete={handleCloseDelete}
+        showDelete={showDelete}
       />
       <NewPhoto
         handleAddPhoto={handleAddPhoto}
-        handleClose={handleClose}
-        handleShow={handleShow}
-        show={show}
+        handleClose={handleCloseNew}
+        show={showNew}
       />
     </div>
   );
