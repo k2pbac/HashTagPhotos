@@ -22,3 +22,43 @@
   max-width: 100%;
   border-radius: 13px;
 }
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.delete {
+  top: 16px;
+  right: 16px;
+  border-radius: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+}
+
+.delete {
+  color: white !important;
+  background-color: black !important;
+}
+
+.hashtag {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  left: 24px;
+  font-weight: 600;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img.opacity {
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
