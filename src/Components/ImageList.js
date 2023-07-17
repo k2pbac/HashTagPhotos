@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Masonry from "react-masonry-css";
-import list from "./data.js";
-export default function ImageList() {
+export default function ImageList({ list }) {
   const [hovered, setHovered] = useState(null);
   const handleHover = (index) => {
     setHovered(index);
