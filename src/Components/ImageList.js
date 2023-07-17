@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
-export default function ImageList({ list, searchTerm }) {
+export default function ImageList({ list, searchTerm, handleDelete }) {
   const [hovered, setHovered] = useState(null);
   const [filteredList, setFilteredList] = useState([]);
   const handleHover = (index) => {
@@ -32,7 +32,10 @@ export default function ImageList({ list, searchTerm }) {
           src={item.url}
           alt={item.alt}
         />
-        <button className={`btn delete ${hovered === index ? "show" : "hide"}`}>
+        <button
+          onClick={() => handleDelete(index)}
+          className={`btn delete ${hovered === index ? "show" : "hide"}`}
+        >
           delete
         </button>
         <p className={`hashtag ${hovered === index ? "show" : "hide"}`}>

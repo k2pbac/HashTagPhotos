@@ -17,6 +17,13 @@ function App() {
     handleClose();
   };
 
+  const handleDeletePhoto = (index) => {
+    const newData = data.filter((item, i) => {
+      return i !== index;
+    });
+    setData(newData);
+  };
+
   return (
     <div className="App">
       <header className="app-header">
@@ -28,7 +35,11 @@ function App() {
           Add a photo
         </button>
       </header>
-      <ImageList list={data} searchTerm={searchTerm} />
+      <ImageList
+        list={data}
+        searchTerm={searchTerm}
+        handleDelete={handleDeletePhoto}
+      />
       <NewPhoto
         handleAddPhoto={handleAddPhoto}
         handleClose={handleClose}
