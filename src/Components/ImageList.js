@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
-export default function ImageList({ list }) {
+export default function ImageList({ list, searchTerm }) {
   const [hovered, setHovered] = useState(null);
+  const [filteredList, setFilteredList] = useState([]);
   const handleHover = (index) => {
     setHovered(index);
   };
 
-  const items = list.map((item, index) => {
+  useEffect(() => {
+    if (searchTerm === "") {
+      setFilteredList(list);
+    } else {
+      setFilteredList(
+        list.filter((item) => {
+          return item.hashtag.toLowerCase() === searchTerm.toLowerCase();
+        })
+      );
+    }
+  }, [searchTerm, list]);
+
+  const items = filteredList.map((item, index) => {
     return (
       <div
         className={`image-container`}

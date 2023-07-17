@@ -8,6 +8,7 @@ import list from "../data.js";
 function App() {
   const [show, setShow] = useState(false);
   const [data, setData] = useState(list);
+  const [searchTerm, setSearchTerm] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <Header />
+        <Header setSearchTerm={setSearchTerm} />
         <button
           onClick={handleShow}
           className="btn btn-success btn-sm new-photo"
@@ -27,7 +28,7 @@ function App() {
           Add a photo
         </button>
       </header>
-      <ImageList list={data} />
+      <ImageList list={data} searchTerm={searchTerm} />
       <NewPhoto
         handleAddPhoto={handleAddPhoto}
         handleClose={handleClose}
