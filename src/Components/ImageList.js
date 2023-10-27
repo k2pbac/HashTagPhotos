@@ -14,6 +14,12 @@ export default function ImageList({
   const handleHover = (index) => {
     setHovered(index);
   };
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    600: 2,
+    500: 1,
+  };
 
   useEffect(() => {
     if (searchTerm === "") {
@@ -59,13 +65,17 @@ export default function ImageList({
     );
   });
 
-  return (
+  const listElement = items.length ? (
     <Masonry
-      breakpointCols={4}
+      breakpointCols={breakpointColumnsObj}
       className="my-masonry-grid"
       columnClassName="my-masonry-grid_column"
     >
       {items}
     </Masonry>
+  ) : (
+    <p className="empty-list">Nothing to show...</p>
   );
+
+  return listElement;
 }

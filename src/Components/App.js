@@ -38,13 +38,7 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <Header setSearchTerm={setSearchTerm} />
-        <button
-          onClick={handleShowNew}
-          className="btn btn-success btn-sm new-photo"
-        >
-          Add a photo
-        </button>
+        <Header setSearchTerm={setSearchTerm} onClick={handleShowNew} />
       </header>
       <ImageList
         list={data}
