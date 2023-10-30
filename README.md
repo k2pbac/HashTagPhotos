@@ -2,25 +2,6 @@
 
 <h1 align="center">#Photos</h1>
 
-<div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
-</div>
-
-<div align="center">
-  <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/challenges/rYyhwJAxMfES5jNQ9YsP">
-      Challenge
-    </a>
-  </h3>
-</div>
 
 <!-- TABLE OF CONTENTS -->
 
@@ -37,7 +18,7 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+<img width="1439" alt="Screenshot 2023-10-20 at 9 04 23 AM" src="https://github.com/k2pbac/HashTagPhotos/assets/68387975/2667ab20-fca7-4ab5-ba37-e70e9f69b60e">
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
